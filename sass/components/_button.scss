@@ -1,0 +1,79 @@
+.btn {
+    // margin: 6rem;
+    outline: none;
+    border: none;
+    padding: 2rem 4rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: $color-second;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &--primary {
+        margin-right: 3.75rem;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &::before {
+        content: "";
+        height: 100%;
+        width: 3px;
+        background-color: $color-prime-light;
+        transform: scaleY(0);
+        transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+            background-color 0.1s;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &--secondary {
+        background-color: $color-prime-light;
+
+        &::before {
+            background-color: $color-second;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        span {
+            display: inline-block;
+            padding-left: 1.75rem;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 15%;
+        left: 8%;
+        display: inline-block;
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: #ffffff;
+        background-color: tomato;
+        border-radius: 50%;
+        padding: .5rem;
+        transform: translateY(.8rem);
+        transition: all .2s;
+    }
+
+    &:hover &__icon {
+        fill: tomato;
+        background-color: white;
+
+    }  
+}
