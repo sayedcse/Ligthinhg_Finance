@@ -1,0 +1,57 @@
+.headings {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.features-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.features {
+    &-items {
+        letter-spacing: 0.1rem;
+        margin: 5rem;
+
+        &__heading {
+            font-size: 2.75rem;
+            font-weight: 600;
+            color: $color-gray;
+        }
+
+        &__sub {
+            font-size: 1.5rem;
+            color: $color-gray-light-2;
+        }
+
+        &::before {
+            content: "";
+            width: 1.3rem;
+            height: 1.3rem;
+            background-color: $color-prime;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    &__left {
+        text-align: right;
+        flex: 0 0 35%;
+    }
+    
+    &__middle {
+        position: relative;
+        &-image {
+            height: 65rem;
+        }
+    }
+    
+    &__right {
+        text-align: left;
+        flex: 0 0 35%;
+    }
+}
