@@ -45,7 +45,7 @@ body {
     transform: scale(1.1); }
 
 .heading-secondary__sub {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.15rem;
   color: #5e667e; }
@@ -91,7 +91,7 @@ body {
 .u-color-gray {
   color: #b6c4f0; }
 
-.btn {
+.btn, .btn:link, .btn:visited {
   outline: none;
   border: none;
   padding: 2rem 4rem;
@@ -105,49 +105,55 @@ body {
   z-index: 10;
   cursor: pointer;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn--primary {
-    margin-right: 3.75rem; }
-    .btn--primary::before {
-      position: absolute;
-      top: 0;
-      right: 0; }
-  .btn::before {
-    content: "";
-    height: 100%;
-    width: 3px;
-    background-color: #3650d0;
-    transform: scaleY(0);
-    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
-    z-index: -1; }
-  .btn:hover::before {
-    transform: scaleY(1);
-    width: 100%; }
-  .btn--secondary {
-    background-color: #3650d0; }
-    .btn--secondary::before {
-      background-color: #ff6866;
-      position: absolute;
-      top: 0;
-      left: 0; }
-    .btn--secondary span {
-      display: inline-block;
-      padding-left: 1.75rem; }
-  .btn__icon {
+
+.btn--primary {
+  margin-right: 3.75rem; }
+  .btn--primary::before {
     position: absolute;
-    top: 15%;
-    left: 8%;
+    top: 0;
+    right: 0; }
+
+.btn::before {
+  content: "";
+  height: 100%;
+  width: 3px;
+  background-color: #3650d0;
+  transform: scaleY(0);
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+  z-index: -1; }
+
+.btn:hover::before {
+  transform: scaleY(1);
+  width: 100%; }
+
+.btn--secondary {
+  background-color: #3650d0; }
+  .btn--secondary::before {
+    background-color: #ff6866;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .btn--secondary span {
     display: inline-block;
-    height: 2.5rem;
-    width: 2.5rem;
-    fill: #ffffff;
-    background-color: tomato;
-    border-radius: 50%;
-    padding: .5rem;
-    transform: translateY(0.8rem);
-    transition: all .2s; }
-  .btn:hover .btn__icon {
-    fill: tomato;
-    background-color: white; }
+    padding-left: 1.75rem; }
+
+.btn__icon {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: #ffffff;
+  background-color: tomato;
+  border-radius: 50%;
+  padding: 0.5rem;
+  transform: translateY(0.8rem);
+  transition: all 0.2s; }
+
+.btn:hover .btn__icon {
+  fill: tomato;
+  background-color: white; }
 
 .headings {
   width: 75%;
@@ -281,8 +287,54 @@ body {
       color: #1d2434;
       margin-bottom: 1.25rem; }
     .option__card__paragraph {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       color: #5e667e; }
+
+.price-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around; }
+
+.price-card {
+  margin: 3.5rem 4rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+  cursor: pointer; }
+  .price-card__heading {
+    font-size: 2.25rem;
+    text-transform: capitalize;
+    color: #1d2434;
+    padding: 3.5rem 0; }
+  .price-card__value {
+    font-size: 5rem;
+    transition: all 0.2s; }
+  .price-card__duration {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #2d46c9; }
+  .price-card__description {
+    color: #5e667e;
+    padding: 2.75rem; }
+  .price-card:hover {
+    box-shadow: 0 1rem 2rem rgba(29, 36, 52, 0.2);
+    transform: scale(1.1); }
+  .price-card:hover .price-card__value {
+    color: #ff6866; }
+  .price-card:hover .btn--mod {
+    color: #fff;
+    background-color: #ff6866; }
+
+.btn--mod,
+.btn--mod:link,
+.btn--mod:visited {
+  margin-right: 0;
+  color: #5e667e;
+  background-color: #fff;
+  margin-bottom: 3.75rem;
+  transition: all 0.2s; }
 
 .header {
   position: relative;

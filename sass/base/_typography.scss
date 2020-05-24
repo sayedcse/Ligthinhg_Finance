@@ -44,7 +44,7 @@ body {
     }
 
     &__sub {
-        font-size: 1.75rem;
+        font-size: $default-font-size;
         font-weight: 400;
         letter-spacing: 0.15rem;
         color: $color-gray-light-2;
