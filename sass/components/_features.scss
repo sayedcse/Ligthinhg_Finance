@@ -9,6 +9,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(tab-port) {
+        // flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
 
 
@@ -41,6 +46,10 @@
     &__left {
         text-align: right;
         flex: 0 0 35%;
+
+        @include respond(tab-port) {
+            flex: 0 0 50%;
+        }
     }
     
     &__middle {
@@ -48,10 +57,27 @@
         &-image {
             height: 65rem;
         }
+
+        @include respond(tab-port) {
+            // flex: 0 0 100%;
+            // order: -1;
+            // transform:  translateX(32%);
+            display: none;
+            backface-visibility: hidden;
+        }
     }
     
     &__right {
         text-align: left;
         flex: 0 0 35%;
+
+        @include respond(tab-port) {
+            flex: 0 0 50%;
+            order: 2;
+            
+            &::before {
+                content: "";    
+            }
+        }
     }
 }

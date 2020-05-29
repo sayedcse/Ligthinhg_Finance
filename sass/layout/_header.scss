@@ -9,10 +9,18 @@
     );
     border-bottom-left-radius: $round-border;
 
+    @include respond(tab-port) {
+        border-radius: 0px;
+    }
+
     &__image {
         height: 80vh;
         position: absolute;
         bottom: 0;
         right: 0;
+
+        @include respond(tab-port) {
+           display: none;
+        }
     }
 }

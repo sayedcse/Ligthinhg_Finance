@@ -3,6 +3,10 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
 }
 
 .price-card {
@@ -12,6 +16,10 @@
     font-size: $default-font-size;
     transition: all 0.2s;
     cursor: pointer;
+
+    @include respond(tab-port) {
+        border: $small-outline;
+    }
 
     &__heading {
         font-size: 2.25rem;

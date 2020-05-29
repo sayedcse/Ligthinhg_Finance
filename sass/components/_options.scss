@@ -1,22 +1,41 @@
 .option {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; // Keeps the box height same, It's default state. 
+    align-items: stretch; // Keeps the box height same, It's default state.
+
+    @include respond(tab-port) {
+        flex-direction: column;
+        justify-content: stretch;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 5rem;
+    }
 
     &__card {
         letter-spacing: 0.1rem;
         padding: 4rem;
         flex: 1 1 30%;
         cursor: pointer;
-        transition: all .5s;
-        
+        transition: all 0.5s;
+
+        @include respond(tab-port) {
+            border: $small-outline;
+            margin-bottom: 2rem;
+        }
+
         &:hover {
-            box-shadow: 0 1.75rem 2rem rgba($color-gray-shade, .4);
+            box-shadow: 0 1.75rem 2rem rgba($color-gray-shade, 0.4);
         }
 
         &:not(:last-child) {
             margin-right: 3.5rem;
+
+            @include respond(tab-port) {
+                margin-right: 0;
+            }
         }
+
 
         &--fig {
             position: relative;
@@ -26,7 +45,7 @@
                 content: "";
                 width: 7.25rem;
                 height: 8rem;
-                background-color: rgba($color-gray-shade, .3);
+                background-color: rgba($color-gray-shade, 0.3);
                 position: absolute;
                 top: -20%;
                 left: 3%;
@@ -47,7 +66,7 @@
 
         &__image {
             height: 5.5rem;
-            transition: transform .2s;
+            transition: transform 0.2s;
 
             &--tab {
                 height: 7rem;
@@ -64,6 +83,5 @@
             font-size: $default-font-size;
             color: $color-gray-light-2;
         }
-
     }
 }

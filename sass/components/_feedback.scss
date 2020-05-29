@@ -11,18 +11,30 @@
             rgba($color-prime, 1) 85%,
             rgba($color-prime-light, 1) 10%
         );
+
+        @include respond(tab-port) {
+            border-radius: 0px;
+        }
     }
 
     &__content {
         width: 80%;
         margin: 0 auto;
         transform: translateY(8rem);
+
+        @include respond(tab-port) {
+            width: 90%;
+        }
     }
 
     &__card-container {
         display: flex;
         justify-content: space-between;
         align-items: stretch;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+        }
     }
 
     &__card {
@@ -31,6 +43,10 @@
         padding: 2.75rem;
         box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
         transition: all 0.5s;
+
+        @include respond(tab-port) {
+            margin: 3rem;
+        }
 
         &:not(:last-child) {
             margin-right: 4.5rem;
@@ -83,6 +99,11 @@
         display: flex;
         justify-content: space-between;
         cursor: pointer;
+
+        @include respond(tab-port) {
+            top: 10rem;
+        
+        }
 
         &__left-arrow {
             margin-right: 2.5rem;

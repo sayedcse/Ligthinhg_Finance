@@ -1,6 +1,17 @@
 .container {
     padding: 3rem;
     position: relative;
+    background-color: $color-white;
+
+    @include respond(big-desktop) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }
 
 .section-features {
@@ -24,11 +35,20 @@
             rgba($color-prime, 1) 10%
         );
 
+        @include respond(tab-port) {
+            border-radius: 0px;
+        }
+
     &__container {
         width: 80%;
         margin: 0 auto;
         text-align: center;
         transform: translateY(5rem);
+
+        @include respond(tab-port) {
+           width: 100%;
+           margin: 0;
+        }
     }
 
     &__headline {
@@ -40,6 +60,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include respond(tab-port) {
+            margin: 8rem;
+        }
 
         &-img {
             display: inline-block;
@@ -64,6 +88,10 @@
         color: $color-gray-light-2;
         background-color: $color-white;
         box-shadow: 0 1rem 2rem rgba($color-gray, .2);
+
+        @include respond(tab-port) {
+            border-radius: 0px;
+        }
     }
 
     &__link,

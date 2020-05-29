@@ -1,4 +1,12 @@
 .footer {
+
+    @include respond(tab-port) {
+        transform: translateY(18rem);
+    }
+
+    @include respond(tab-port) {
+        margin: 3rem 0;
+    }
     &__main {
         display: flex;
         justify-content: space-around;
@@ -54,6 +62,10 @@
         display: flex;
         font-size: 1.25rem;
         color: $color-gray-light;
+
+        @include respond(tab-port) {
+            padding-bottom: 3rem;
+        }
 
         &__copyright {
             margin-right: auto;
