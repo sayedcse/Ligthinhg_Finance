@@ -29,8 +29,8 @@
         display: inline;
         background-color: $color-white;
         padding: 2.75rem;
-        box-shadow: 0 1rem 2rem rgba($color-black, .2);
-        transition: all .5s;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+        transition: all 0.5s;
 
         &:not(:last-child) {
             margin-right: 4.5rem;
@@ -44,13 +44,13 @@
                 height: 5rem;
                 width: 5rem;
                 border-radius: 50%;
-                box-shadow: 0 .8rem 1rem rgba($color-gray, .2);
+                box-shadow: 0 0.8rem 1rem rgba($color-gray, 0.2);
             }
 
             &-data {
-                margin-left: 2.5rem ;
+                margin-left: 2.5rem;
             }
-            
+
             &-name {
                 display: block;
                 font-size: 2rem;
@@ -67,11 +67,40 @@
 
         &__comment {
             font-size: $default-font-size;
-            
         }
 
         &:hover {
             transform: scale(1.1);
+        }
+    }
+
+    &__scroll {
+        font-size: 3.5rem;
+        position: absolute;
+        top: 7rem;
+        right: 0;
+        color: $color-gray-light;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &__left-arrow {
+            margin-right: 2.5rem;
+            transition: all 0.5s;
+
+            &:hover {
+                color: white;
+                transform: scale(2);
+            }
+        }
+
+        &__right-arrow {
+            transition: transform 0.5s;
+
+            &:hover {
+                color: white;
+                transform: scale(2);
+            }
         }
     }
 }

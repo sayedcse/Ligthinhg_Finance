@@ -5,8 +5,104 @@
 
 .section-features {
     padding: 8rem 0;
-    background-image: linear-gradient(130deg, 
+    background-image: linear-gradient(
+        130deg,
         rgba(242, 242, 242, 0.35) 30%,
-        #ffffff 30%, #ffffff 70%,
-        rgba(242, 242, 242, 0.35) 5%);
+        #ffffff 30%,
+        #ffffff 70%,
+        rgba(242, 242, 242, 0.35) 5%
+    );
+}
+
+.join {
+    height: 55rem;
+    background-image: linear-gradient(
+            125deg,
+            rgba($color-gray, 1) 20%,
+            rgba($color-gray-dark, 1) 20%,
+            rgba($color-gray-dark, 1) 85%,
+            rgba($color-prime, 1) 10%
+        );
+
+    &__container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        transform: translateY(5rem);
+    }
+
+    &__headline {
+        width: 60%;
+    }
+
+    &__logo {
+        margin: 8rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-img {
+            display: inline-block;
+            width: 15rem;
+            filter: grayscale(1);
+            cursor: pointer;
+            transition: all .1s;
+
+            &:not(:last-child) {
+                margin-right: 7rem;
+            }
+
+            &:hover {
+                filter: grayscale(0);
+            }
+        }        
+    }
+
+    &__us {
+        font-size: $default-font-size;
+        letter-spacing: .1rem;
+        color: $color-gray-light-2;
+        background-color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-gray, .2);
+    }
+
+    &__link,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        letter-spacing: .1rem;
+        color: $color-second;
+        margin-left: 1rem;
+        padding-bottom: .75rem;
+        position: relative;
+        overflow: hidden;
+        
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            border-bottom: 1px solid $color-second;
+            position: absolute;
+            bottom: 0;
+            left: -30rem;
+            transition: all .5s;
+        }
+
+        &:hover::after,
+        &:active::after {
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.heading-secondary {
+
+    &__main {
+        
+        &--mod {
+            padding-top: 5rem;
+            font-size: 3.75rem;
+        }
+    }
 }
