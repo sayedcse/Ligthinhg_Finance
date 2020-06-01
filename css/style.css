@@ -266,7 +266,10 @@ body {
   transition: all 0.5s; }
   @media (max-width: 56.25em) {
     .feedback__card {
-      margin: 3rem; } }
+      margin: 3rem; }
+      .feedback__card:not(:first-child) {
+        display: none;
+        backface-visibility: hidden; } }
   .feedback__card:not(:last-child) {
     margin-right: 4.5rem; }
   .feedback__card__user {
@@ -433,19 +436,23 @@ body {
 
 @media (max-width: 56.25em) {
   .footer {
-    transform: translateY(18rem); } }
-
-@media (max-width: 56.25em) {
-  .footer {
-    margin: 3rem 0; } }
+    text-align: center;
+    transform: translateY(18rem);
+    margin: 3rem 0;
+    margin-top: 15rem; } }
 
 .footer__main {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around; }
   .footer__main .navigation__logo {
     margin: 0; }
     .footer__main .navigation__logo--mod {
       padding-left: 0; }
+  @media (max-width: 56.25em) {
+    .footer__main > * {
+      flex: 0 0 40%;
+      margin-bottom: 2.5rem; } }
 
 .footer__navigation {
   text-transform: capitalize; }
@@ -525,7 +532,8 @@ body {
   background-color: #2d46c9;
   padding-top: 5rem;
   width: 100%;
-  border-radius: 5px 5px 0 0; }
+  border-radius: 5px 5px 0 0;
+  position: relative; }
   @media (max-width: 56.25em) {
     .navigation {
       border-radius: 0px; } }
@@ -536,6 +544,11 @@ body {
       color: #fff;
       font-size: 2rem;
       font-weight: 600; }
+    .navigation__logo__icon {
+      height: 5rem;
+      position: absolute;
+      top: 5rem;
+      left: 20rem; }
 
 .main-nav {
   list-style: none;
@@ -619,13 +632,17 @@ body {
     align-items: center; }
     @media (max-width: 56.25em) {
       .join__logo {
-        margin: 8rem; } }
+        margin: 8rem;
+        flex-wrap: wrap; } }
     .join__logo-img {
       display: inline-block;
       width: 15rem;
       filter: grayscale(1);
       cursor: pointer;
       transition: all .1s; }
+      @media (max-width: 56.25em) {
+        .join__logo-img {
+          margin: 1.75rem 0; } }
       .join__logo-img:not(:last-child) {
         margin-right: 7rem; }
       .join__logo-img:hover {

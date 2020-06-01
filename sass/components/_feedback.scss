@@ -46,6 +46,11 @@
 
         @include respond(tab-port) {
             margin: 3rem;
+
+            &:not(:first-child) {
+                display: none;
+                backface-visibility: hidden;
+            }
         }
 
         &:not(:last-child) {

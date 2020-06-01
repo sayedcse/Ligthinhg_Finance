@@ -63,6 +63,7 @@
 
         @include respond(tab-port) {
             margin: 8rem;
+            flex-wrap: wrap;
         }
 
         &-img {
@@ -71,6 +72,10 @@
             filter: grayscale(1);
             cursor: pointer;
             transition: all .1s;
+
+            @include respond(tab-port) {
+                margin: 1.75rem 0;
+            }
 
             &:not(:last-child) {
                 margin-right: 7rem;

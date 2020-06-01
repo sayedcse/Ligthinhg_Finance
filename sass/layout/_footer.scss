@@ -1,14 +1,15 @@
 .footer {
 
     @include respond(tab-port) {
+        text-align: center;
         transform: translateY(18rem);
+        margin: 3rem 0;
+        margin-top: 15rem;
     }
 
-    @include respond(tab-port) {
-        margin: 3rem 0;
-    }
     &__main {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
 
         .navigation__logo {
@@ -18,8 +19,15 @@
                 padding-left: 0;
             }
         }
-    }
 
+        & > * {
+            @include respond(tab-port) {
+                flex: 0 0 40%;
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+    
     &__navigation {
         text-transform: capitalize;
 

@@ -6,6 +6,7 @@
     padding-top: 5rem;
     width: 100%;
     border-radius: $round-border $round-border 0 0;
+    position: relative;
 
     @include respond(tab-port) {
         border-radius: 0px;
@@ -18,6 +19,14 @@
             color: $color-white;
             font-size: 2rem;
             font-weight: 600;
+        }
+
+        &__icon {
+            height: 5rem;
+            position: absolute;
+            top: 5rem;
+            left: 20rem;
+            
         }
     }
 }
