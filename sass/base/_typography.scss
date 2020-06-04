@@ -11,6 +11,11 @@ body {
     color: $color-white;
     padding: 13rem 0 3rem 13rem;
 
+    @include respond(tab-port) {
+        width: 90%;
+        padding-left: 8rem;
+    }
+
     &-primary {
         &__main {
             font-size: 5.5rem;

@@ -23,6 +23,12 @@ html {
   @media (max-width: 75em) {
     html {
       font-size: 50%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 43.75%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 31.25%; } }
 
 body {
   box-sizing: border-box; }
@@ -41,6 +47,10 @@ body {
   width: 60%;
   color: #fff;
   padding: 13rem 0 3rem 13rem; }
+  @media (max-width: 56.25em) {
+    .heading {
+      width: 90%;
+      padding-left: 8rem; } }
   .heading-primary__main {
     font-size: 5.5rem;
     font-weight: 600;
@@ -548,11 +558,38 @@ body {
       height: 5rem;
       position: absolute;
       top: 5rem;
-      left: 20rem; }
+      left: 10rem; }
+  .navigation__menu {
+    display: block;
+    position: relative;
+    width: 3.75rem;
+    height: 4px;
+    background-color: #fff;
+    margin-right: 5.5rem;
+    cursor: pointer; }
+    @media (min-width: 56.25em) {
+      .navigation__menu {
+        display: none;
+        backface-visibility: hidden; } }
+    .navigation__menu::before, .navigation__menu::after {
+      content: "";
+      width: 5rem;
+      height: 4px;
+      background-color: #fff;
+      position: absolute;
+      left: 0; }
+    .navigation__menu::after {
+      bottom: -1.5rem; }
+    .navigation__menu::before {
+      top: -1.5rem; }
 
 .main-nav {
   list-style: none;
   margin-right: 3.5rem; }
+  @media (max-width: 56.25em) {
+    .main-nav {
+      display: none;
+      backface-visibility: hidden; } }
   .main-nav__items {
     display: inline-block;
     font-weight: 600;
