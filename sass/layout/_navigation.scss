@@ -38,6 +38,7 @@
         background-color: $color-white;
         margin-right: 5.5rem;
         cursor: pointer;
+        z-index: 101;
 
         @include respond(tab-portmin) {
             display: none;
@@ -125,5 +126,47 @@
             top: 0rem;
             left: 4rem;
         }
+    }
+
+    &__mobile {
+        position: relative;
+
+        @include respond (tab-port) {
+            position: fixed;
+            top: 0;
+            text-align: center;
+            display: block;
+            background-color: $color-second;
+            width: 115%;
+            padding: 4rem;
+            margin: 0;
+            z-index: 100;
+            transform: translateX(0) skewX(-30deg);
+            animation: slide-in 1s cubic-bezier(.68,.01,.59,1.24) forwards;
+            backface-visibility: hidden;
+
+            & > * {
+                transform: skewX(30deg);
+            }
+
+            span {
+                background-color: $color-prime;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                background-color: $color-prime;
+                height: 13.5rem;
+                width: 100%;
+                transform: translateX(80%);
+                animation: slide-in-before .8s ease-in-out .8s forwards;
+                backface-visibility: hidden;
+            }
+        }
+
     }
 }

@@ -11,6 +11,18 @@ $breakpoint argument choices
 -tab-land
 -big-desktop
 */
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%) skewX(-30deg); }
+  100% {
+    transform: translateX(0) skewX(-30deg); } }
+
+@keyframes slide-in-before {
+  0% {
+    transform: translateX(80%); }
+  100% {
+    transform: translateX(-110%); } }
+
 *,
 *::before,
 *::after {
@@ -566,7 +578,8 @@ body {
     height: 4px;
     background-color: #fff;
     margin-right: 5.5rem;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 101; }
     @media (min-width: 56.25em) {
       .navigation__menu {
         display: none;
@@ -628,6 +641,38 @@ body {
     position: absolute;
     top: 0rem;
     left: 4rem; }
+  .main-nav__mobile {
+    position: relative; }
+    @media (max-width: 56.25em) {
+      .main-nav__mobile {
+        position: fixed;
+        top: 0;
+        text-align: center;
+        display: block;
+        background-color: #ff6866;
+        width: 115%;
+        padding: 4rem;
+        margin: 0;
+        z-index: 100;
+        transform: translateX(0) skewX(-30deg);
+        animation: slide-in 1s cubic-bezier(0.68, 0.01, 0.59, 1.24) forwards;
+        backface-visibility: hidden; }
+        .main-nav__mobile > * {
+          transform: skewX(30deg); }
+        .main-nav__mobile span {
+          background-color: #2d46c9; }
+        .main-nav__mobile::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          background-color: #2d46c9;
+          height: 13.5rem;
+          width: 100%;
+          transform: translateX(80%);
+          animation: slide-in-before .8s ease-in-out .8s forwards;
+          backface-visibility: hidden; } }
 
 .container {
   padding: 3rem;
